@@ -22,8 +22,13 @@ while(True):
             print("再大一點")
             min = keyin + 1
         print(f"您已經猜了{count}次")
+
+
+
+while(True):
+    playGame()
     is_play = pyip.inputYesNo("您還要繼續玩嗎?(y,n):")
     if is_play=="no":
         break
-    
+
 print("Game Over!")
