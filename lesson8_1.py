@@ -1,6 +1,6 @@
 import random
 import pyinputplus as pyip
-while(True):
+def playGame():
     min = 1
     max = 100
     count = 0
@@ -22,7 +22,6 @@ while(True):
             print("再大一點")
             min = keyin + 1
         print(f"您已經猜了{count}次")
-
 
 
 while(True):
