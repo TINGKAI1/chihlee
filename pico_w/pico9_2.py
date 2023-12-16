@@ -10,4 +10,4 @@ time1 = Timer()
 time1.init(freq=1,callback=callback1)
 
 time2 = Timer()
-time1.init(period=2000,callback=callback1)
+time2.init(period=2000,callback=callback2)
