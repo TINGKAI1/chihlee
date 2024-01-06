@@ -1,8 +1,10 @@
 import network
-
+import time
+from machine import WDT
+# enable station interface and connect to WiFi access point
 nic = network.WLAN(network.STA_IF)
 nic.active(True)
-nic.connect('KAI','88888888')
+nic.connect('Robert_iPhone', '0926656000')
 
 max_wait = 10
 
@@ -16,13 +18,15 @@ while max_wait > 0:
     time.sleep(1)
 
 
+    
 #沒有wifi的處理
 if nic.status() != 3:
     #連線失敗,重新開機
     #wdt = WDT(timeout=2000)
     #wdt.feed()
-    raise RuntimeError("連線失敗")
+    raise RuntimeError('連線失敗')
     
 else:
-    print("連線成功")
+    print("成功連線")
     print(nic.ifconfig())
+    
