@@ -1,6 +1,7 @@
 import network
 import time
 from machine import WDT,Timer,ADC
+import urequests as requests
 
 
 def connect():
@@ -39,7 +40,7 @@ def connect():
 
 def alert():
     print('要爆炸了!')
-    response = requests.get(https://hook.us1.make.com/g9yc2b1ef6nkj873t9ehshvcrxmp2v3v?name=pico&date=2024-01-06-14:05&temperature=28.54)
+    response = requests.get('https://hook.us1.make.com/g9yc2b1ef6nkj873t9ehshvcrxmp2v3v?name=pico&date=2024-01-06-14:05&temperature=28.54')
     print(help(response))
     response.close()
     
@@ -62,4 +63,3 @@ connect()
 start = time.ticks_ms() - 60 * 1000 #應用程式啟動時,計時時間,先減60秒    
 time1 = Timer()
 time1.init(period=1000,callback=callback1)
-#https://hook.us1.make.com/g9yc2b1ef6nkj873t9ehshvcrxmp2v3v?name=pico&date=2024-01-06-14:05&temperature=28.54
