@@ -1,6 +1,7 @@
 import network
 import time
-from machine import WDT
+from machine import WDT,Timer
+
 
 def connect():
     # enable station interface and connect to WiFi access point
@@ -31,5 +32,11 @@ def connect():
     else:
         print("成功連線")
         print(nic.ifconfig())
+        
+def mycallback(t:Timer):
+    print("Hello! World")
+    t.deinit()
 
 connect()
+tim = Timer()
+tim.init(period=1000, callback=mycallback)
