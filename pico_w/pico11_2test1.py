@@ -49,7 +49,7 @@ def alert(t:float):
     minites = date_tuple[5]
     second = date_tuple[6]
     date_str = f'{year}-{month}-{day} {hour}:{minites}:{second}'
-    response = requests.get(f'https://hook.us1.make.com/g9yc2b1ef6nkj873t9ehshvcrxmp2v3v?name=pico_我家雞場&date={date_str}&temperature={t}')
+    response = requests.get(f'https://自已的?name=pico_我家雞場&date={date_str}&temperature={t}')
     response.close()
     
 def callback1(t:Timer):
