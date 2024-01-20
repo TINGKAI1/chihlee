@@ -5,5 +5,7 @@ red_led = Pin(15,mode=Pin.OUT)
 btn = Pin(14,mode=Pin.PULL_DOWN)
 
 while True:
-    print(btn.value())
-    time.sleep_ms(500)
+    if btn.value():
+        red_led.value(1)
+    else:
+        red_led.value(0)
