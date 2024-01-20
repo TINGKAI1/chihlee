@@ -3,9 +3,12 @@ import time
 
 red_led = Pin(15,mode=Pin.OUT)
 btn = Pin(14,mode=Pin.PULL_DOWN)
+is_press = False
 
 while True:
     if btn.value():
-        red_led.value(1)
-    else:
-        red_led.value(0)
+        is_press = True
+    elif is_press:
+        print('release')
+        is_press = False
+        
